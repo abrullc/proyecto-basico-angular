@@ -8,8 +8,8 @@ describe('DataDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DataDisplayComponent]
-    })
+    imports: [DataDisplayComponent]
+})
     .compileComponents();
     
     fixture = TestBed.createComponent(DataDisplayComponent);

@@ -6,15 +6,13 @@ import { AppComponent } from './app.component';
 import { DataDisplayComponent } from './data-display/data-display.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DataDisplayComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AppComponent,
+        DataDisplayComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
