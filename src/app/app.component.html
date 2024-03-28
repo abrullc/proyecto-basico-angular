@@ -1,27 +1,25 @@
-<body
-style="
-background-color: burlywood;
-"
->
-  <button
-  style="
-    height: 3em;
-    width: 10em;
-    font-size: larger;
-    font-weight: bold;
-    color: brown;
-  "
-  >Añadir</button>
+<html style="background-color: burlywood;">
+  <body>
+    <button (click)="openDialog()"
+    style="
+      height: 3em;
+      width: 10em;
+      font-size: larger;
+      font-weight: bold;
+      color: brown;
+    "
+    >Añadir</button>
 
-  <div
-  style="
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    column-gap: 100em;
-  "
-  >
-    <app-data-display/>
-  </div>
-</body>
+    <div
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      column-gap: 100em;
+    "
+    >
+      <app-data-display/>
+    </div>
+  </body>
+</html>
