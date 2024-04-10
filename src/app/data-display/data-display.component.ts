@@ -1,11 +1,10 @@
 import { Component, OnInit, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+import { DataService } from "../data.service";
 
 @Component({
   selector: "app-data-display",
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
   templateUrl: "./data-display.component.html",
   styleUrl: "./data-display.component.css"
 })
@@ -13,15 +12,22 @@ export class DataDisplayComponent implements OnInit {
   httpClient = inject(HttpClient);
   data: any[] = [];
 
+  constructor(private dataService: DataService) {}
+
   ngOnInit(): void {
+    this.dataService.fetchData();
     this.fetchData();
+
+    this.dataService.data$.subscribe(data => {
+      this.data = data;
+      console.log(data);
+    });
   }
 
-  fetchData() {
+  fetchData(): any {
     this.httpClient
     .get("https://api.sampleapis.com/coffee/hot")
     .subscribe((data: any) => {
-      console.log(data);
       this.data = data;
     });
   }
