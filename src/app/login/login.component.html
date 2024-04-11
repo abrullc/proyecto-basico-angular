@@ -1,0 +1,12 @@
+<form [formGroup]="formLogin" style="padding: 3em;">
+  <h1>Nombre de usuario</h1>
+  <hr>
+  <input type="text" formControlName="username" required style="margin-bottom: 2em;">
+  <br>
+  <h1>Contraseña</h1>
+  <hr>
+  <input type="password" formControlName="password" required style="margin-bottom: 2em;">
+  <button (click)="login()">Aceptar</button>
+</form>
+
+{{formLogin.value | json }}
