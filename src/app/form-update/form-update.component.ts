@@ -6,19 +6,21 @@ import { DataService } from '../data.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-form-create',
+  selector: 'app-form-update',
   standalone: true,
-  templateUrl: './form-create.component.html',
-  styleUrl: './form-create.component.css',
+  templateUrl: './form-update.component.html',
+  styleUrl: './form-update.component.css',
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     DataService
-  ],
+  ]
 })
-export class FormCreateComponent {
+export class FormUpdateComponent {
+  public coffee: any
+
   formCafe = new FormGroup({
     "title": new FormControl("", Validators.required),
     "image": new FormControl("", Validators.required)
@@ -26,11 +28,11 @@ export class FormCreateComponent {
 
   constructor(
     private dataService: DataService,
-    private dialogRef: MatDialogRef<FormCreateComponent>
+    private dialogRef: MatDialogRef<FormUpdateComponent>
   ) {}
 
   onSubmit(){
-    this.dataService.addData(this.formCafe.value);
+    this.dataService.updateData(this.formCafe.value, this.coffee);
     this.closeModal();
   }
 
