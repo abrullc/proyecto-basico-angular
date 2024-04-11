@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { DataDisplayComponent } from './data-display/data-display.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { MatDialog } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    DataDisplayComponent
+    DataDisplayComponent,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

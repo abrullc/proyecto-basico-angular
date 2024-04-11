@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   users: any[] = [];
 
   ngOnInit(): void {
+    console.log(" >>> LOGIN INICIADO")
     this.fetchData();
   }
 
