@@ -1,9 +1,11 @@
 <ul style="list-style: none;">
-  @for (post of data; track post.id) {
+  @for (coffee of data; track coffee.id) {
     <li style="padding-bottom: 5em; text-align: center;">
-      <h1 style="color: brown; font-weight: bold;">{{post.title}}</h1>
-      <img src="{{post.image}}" height="500em">
+      <h1 style="color: brown; font-weight: bold;">{{coffee.title}}</h1>
+      <img src="{{coffee.image}}" height="500em">
       <br>
+      <button (click)="onUpdate(coffee)">Actualizar</button>
+      <button (click)="onDelete(coffee)">Eliminar</button>
     </li>
   }
 </ul>
