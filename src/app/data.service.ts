@@ -13,8 +13,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class DataService {
-  data: any[] = [];
-
   private _data = new BehaviorSubject<any[]>([]);
   data$ = this._data.asObservable();
 
@@ -24,13 +22,14 @@ export class DataService {
     this.httpClient
       .get("https://api.sampleapis.com/coffee/hot")
       .subscribe((data: any) => {
-        this.data = data;
+        this._data.next(data);
       });
   }
 
   addData(newData: any) {
     const currentData = this._data.getValue();
-    this._data.next([...currentData, newData]);
-    console.log(this.data$)
+    currentData.push(newData);
+
+    //this._data.next(currentData);
   }
 }

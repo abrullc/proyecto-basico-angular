@@ -16,19 +16,10 @@ export class DataDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.fetchData();
-    this.fetchData();
 
     this.dataService.data$.subscribe(data => {
       this.data = data;
       console.log(data);
-    });
-  }
-
-  fetchData(): any {
-    this.httpClient
-    .get("https://api.sampleapis.com/coffee/hot")
-    .subscribe((data: any) => {
-      this.data = data;
     });
   }
 }
