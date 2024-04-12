@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class LoginComponent implements OnInit {
   httpClient = inject(HttpClient);
   users: any[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     console.log(" >>> LOGIN INICIADO")
@@ -41,5 +44,6 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log(this.formLogin.value)
+    this.router.navigate(['/main']);
   }
 }
