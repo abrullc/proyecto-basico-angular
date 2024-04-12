@@ -24,7 +24,6 @@ export class DataDisplayComponent implements OnInit {
 
     this.dataService.data$.subscribe(data => {
       this.data = data;
-      console.log(data);
     });
   }
 
