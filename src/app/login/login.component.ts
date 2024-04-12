@@ -19,31 +19,34 @@ import { Router } from "@angular/router";
 export class LoginComponent implements OnInit {
   httpClient = inject(HttpClient);
   users: any[] = [];
+  user: any;
+  username: any;
+  password: any;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    console.log(" >>> LOGIN INICIADO")
     this.fetchData();
   }
 
-  public fetchData() {
+  fetchData(): void {
     this.httpClient
-    .get("https://fakestoreapi.com/users")
-    .subscribe((users: any) => {
-      this.users = users;
-    });
-
-    console.log(this.users);
+      .get("https://fakestoreapi.com/users")
+      .subscribe((user: any) => {
+        this.users.push(user);
+      });
   }
 
   formLogin = new FormGroup({
-    "title": new FormControl("", Validators.required),
-    "image": new FormControl("", Validators.required)
+    "username": new FormControl("", Validators.required),
+    "password": new FormControl("", Validators.required)
   })
 
-  login(){
-    console.log(this.formLogin.value)
-    this.router.navigate(['/main']);
+  login() {
+    this.users[0].forEach((user: { username: string; password: string; }) => {
+      if (user.username == this.formLogin.value.username && user.password == this.formLogin.value.password) {
+        this.router.navigate(['main']);
+      }
+    })
   }
 }
