@@ -2,3 +2,13 @@ button {
   margin: 1em;
   width: 7em;
 }
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+li {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+}
