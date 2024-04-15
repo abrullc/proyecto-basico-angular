@@ -26,4 +26,8 @@ export class MainComponent {
       console.log('The dialog was closed', result);
     });
   }
+
+  topFunction(): void {
+    document.documentElement.scrollTop = 0;
+  }
 }
