@@ -1,15 +1,7 @@
 <html>
   <body>
-    <button (click)="openDialog()"
-    style="
-      height: 3em;
-      width: 10em;
-      font-size: larger;
-      font-weight: bold;
-      color: brown;
-    "
-    >Añadir</button>
-
+    <h1>Cafetería</h1>
+    <hr>
     <div
     style="
       display: flex;
@@ -19,6 +11,18 @@
       column-gap: 100em;
     "
     >
+
+      <button (click)="openDialog()"
+      style="
+        height: 3em;
+        width: 10em;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        font-size: larger;
+        font-weight: bold;
+        color: brown;
+      "
+      >Añadir</button>
       <app-data-display/>
     </div>
   </body>

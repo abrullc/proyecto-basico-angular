@@ -1,0 +1,13 @@
+h1 {
+text-align: center;
+color: brown;
+font-weight: bold;
+font-style: italic;
+font-size: 5em;
+margin-top: 1em;
+margin-bottom: 0.5em;
+}
+
+hr {
+  padding-left: 1em;
+}
